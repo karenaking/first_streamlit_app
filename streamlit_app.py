@@ -41,19 +41,8 @@ try:
     streamlit.dataframe(back_from_function)
 except URLError as e:
   streamlit.error()
- 
-#new section for fruityvice api response
 
-streamlit.write('The user entered', fruit_choice)
-
-
-
-
-# write your own comment - what does this do?
 streamlit.dataframe(fruityvice_normalized)
-
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 
 streamlit.header("The fruit load list contains:")
 #snowflake related functions
